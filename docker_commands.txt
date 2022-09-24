@@ -1,0 +1,48 @@
+## Docker commands used to build the application 
+docker build -t techtrends:1.0.0  .
+
+## Docker commands used to run the application
+docker run --name techtrends -d -p 7111:3111 techtrends:1.0.0
+
+## Docker commands used to get the application logs
+docker ps
+docker logs 0ace52cc175a
+
+## Logs from the container running the TechTrends application
+[2022-09-24 19:43:17,596] {_internal.py:225} INFO -  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+[2022-09-24 19:43:30,454] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:43:30] "GET / HTTP/1.1" 200 -
+[2022-09-24 19:43:30,477] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:43:30] "GET /static/css/main.css HTTP/1.1" 200 -
+[2022-09-24 19:43:30,546] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:43:30] "GET /favicon.ico HTTP/1.1" 404 -
+[2022-09-24 19:44:46,767] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:46] "GET / HTTP/1.1" 200 -
+[2022-09-24 19:44:46,787] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:46] "GET /static/css/main.css HTTP/1.1" 200 -
+[2022-09-24 19:44:46,857] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:46] "GET /favicon.ico HTTP/1.1" 404 -
+[2022-09-24 19:44:47,866] {app.py:54} INFO - Article with title "2020 CNCF Annual Report" retrieved
+[2022-09-24 19:44:47,869] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:47] "GET /1 HTTP/1.1" 200 -
+[2022-09-24 19:44:47,888] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:47] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:44:49,047] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:49] "GET / HTTP/1.1" 200 -
+[2022-09-24 19:44:49,066] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:49] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:44:50,424] {app.py:54} INFO - Article with title "Kubernetes Certification" retrieved
+[2022-09-24 19:44:50,424] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:50] "GET /6 HTTP/1.1" 200 -
+[2022-09-24 19:44:50,441] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:50] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:44:53,001] {app.py:60} INFO - The "About Us" page was retrieved
+[2022-09-24 19:44:53,003] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:53] "GET /about HTTP/1.1" 200 -
+[2022-09-24 19:44:53,024] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:53] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:44:56,170] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:56] "GET /create HTTP/1.1" 200 -
+[2022-09-24 19:44:56,190] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:44:56] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:49:43,495] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:43] "GET /create HTTP/1.1" 200 -
+[2022-09-24 19:49:43,518] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:43] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:49:50,553] {app.py:79} INFO - A new article was created with title "New post"
+[2022-09-24 19:49:50,554] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:50] "POST /create HTTP/1.1" 302 -
+[2022-09-24 19:49:50,558] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:50] "GET / HTTP/1.1" 200 -
+[2022-09-24 19:49:50,590] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:50] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:49:54,972] {app.py:54} INFO - Article with title "2020 CNCF Annual Report" retrieved
+[2022-09-24 19:49:54,972] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:54] "GET /1 HTTP/1.1" 200 -
+[2022-09-24 19:49:54,990] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:54] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:49:56,973] {app.py:51} INFO - Failed to find article with id "99"
+[2022-09-24 19:49:56,974] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:56] "GET /99 HTTP/1.1" 404 -
+[2022-09-24 19:49:57,000] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:57] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:49:59,639] {app.py:54} INFO - Article with title "2020 CNCF Annual Report" retrieved
+[2022-09-24 19:49:59,640] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:59] "GET /1 HTTP/1.1" 200 -
+[2022-09-24 19:49:59,661] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:49:59] "GET /static/css/main.css HTTP/1.1" 304 -
+[2022-09-24 19:50:01,068] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:50:01] "GET / HTTP/1.1" 200 -
+[2022-09-24 19:50:01,092] {_internal.py:225} INFO - 172.17.0.1 - - [24/Sep/2022 19:50:01] "GET /static/css/main.css HTTP/1.1" 304 -
