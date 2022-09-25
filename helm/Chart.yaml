@@ -1,0 +1,8 @@
+apiVersion: v1
+name: techtrends 
+keywords:
+- techtrends
+version: 1.0.0
+maintainers:
+- name: isaacamaro03 
+  email: isaac.amaro03@gmail.com
