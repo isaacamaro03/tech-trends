@@ -85,11 +85,27 @@ def create():
 # Health status endpoint
 @app.route('/healthz')
 def healthz():
-    response = app.response_class(
-        response=json.dumps({"result":"OK - healthy"}),
-        status=200,
-        mimetype='application/json'
-    )
+    isDatabaseUp = True
+
+    try:
+        connection = get_db_connection()
+        connection.execute('SELECT * FROM posts ORDER BY ROWID ASC LIMIT 1').fetchone()
+        connection.close()
+    except:
+        isDatabaseUp = False
+
+    if (isDatabaseUp):
+        response = app.response_class(
+            response=json.dumps({"result":"OK - healthy"}),
+            status=200,
+            mimetype='application/json'
+        )
+    else:
+        response = app.response_class(
+            response=json.dumps({"result":"ERROR - unhealthy"}),
+            status=500,
+            mimetype='application/json'
+        )
     return response
 
 # Metrics endpoint
@@ -102,6 +118,7 @@ def metrics():
 
     connection = get_db_connection()
     responseData["post_count"] = connection.execute('SELECT COUNT(*) FROM posts').fetchone()[0]
+    connection.close()
 
     response = app.response_class(
         response=json.dumps(responseData),
