@@ -7,7 +7,7 @@ service:
   type: ClusterIP
 image:
   repository: isaacamaro03/techtrends
-  tag: latest
+  tag: main
   pullPolicy: IfNotPresent
 replicaCount: 1
 resources:
